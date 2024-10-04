@@ -21,11 +21,13 @@ public class Main {
         Eletronica eletronica = new Eletronica(codigo, preco, nome, garantia);
         
         //-------------------------------------------------------------------------------------------------------------------------------------------
-        // chamando o metodo verificação 
-
+        // chamando o metodo verificação de desconto
+        
         System.out.println("O produto possui desconto? ");
         String resposta = input.next().toLowerCase();
         eletronica.verificacao(resposta);
+        
+
         
 
 

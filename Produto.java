@@ -22,11 +22,11 @@ public abstract class Produto {
         System.out.println("Preço: " + preco);
     }
 
-    public double mostrar_dados(double desconto) {
+    public double mostrar_dados(double valor_do_desconto) {
 
         double valor_final;
 
-        valor_final = this.preco - desconto;
+        valor_final = this.preco - valor_do_desconto;
 
         System.out.println("Código: " + codigo);
         System.out.println("Nome: " + nome);
@@ -45,9 +45,14 @@ public abstract class Produto {
             
             mostrar_dados(valor_do_desconto);
         }
-        else {
+        else if (resposta.equals("não")){
             
-            mostrar_dados();
+            mostrar_dados(); // mostrar os dados sem o desconto
+        }
+        else{
+
+            System.out.println("Opção inválida");
+            verificacao(resposta);
         }
 
     }

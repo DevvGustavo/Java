@@ -2,8 +2,15 @@ public class Eletronica extends Produto {
     
     int garantia;
 
-    public Eletronica(String codigo, double preco, String nome, int garantia) {
+    public Eletronica(String codigo, double preco, String nome) {
+        
+        // Este construtor vai ficar responsável caso o produto não tenha garantia
+        super(codigo, preco, nome);
+    }
 
+    public Eletronica(String codigo, double preco, String nome, int garantia) {
+        
+        // Este ficará responsável caso tenha garantia
         super(codigo, preco, nome);
         this.garantia = garantia;
     }
@@ -24,6 +31,12 @@ public class Eletronica extends Produto {
             System.out.println("O" + getNome() + "possui" + garantia + " anos de garantia");
 
         }
+        else{
+
+            System.out.println("Opção Inválida, tente novamente...");
+            System.out.println(); //somente para pular linha :)
+            verificar_garantia();
+        }
 
     }
     // se notarem este código a baixo é igual o de cima, mas eu não sei resolver igual a atividade :(
@@ -37,7 +50,6 @@ public class Eletronica extends Produto {
 
     public void mostrar_dados(boolean tempo_de_garantia) {
 
-        tempo_de_garantia = true;
         super.mostrar_dados();
 
         if (tempo_de_garantia == true){
