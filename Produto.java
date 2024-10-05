@@ -35,8 +35,10 @@ public abstract class Produto {
         return valor_final;
         
     }
-
-    public void verificacao (String resposta) {
+   
+    // Tentar ajeitar depois
+// ----------------------------------------------------------------------------------------------------------------------
+    public void verificacao_de_desconto (String resposta) {
 
         if (resposta.equals("sim")){
 
@@ -47,16 +49,17 @@ public abstract class Produto {
         }
         else if (resposta.equals("não")){
             
-            mostrar_dados(); // mostrar os dados sem o desconto
+            mostrar_dados(); // DEVERIA MOSTRAR os dados sem o desconto, mas ainda não funciona :/
         }
         else{
 
             System.out.println("Opção inválida");
-            verificacao(resposta);
+            verificacao_de_desconto(resposta);
         }
 
     }
-
+//----------------------------------------------------------------------------------------------------------------------------
+   
     public String getCodigo() {
         return codigo;
     }
