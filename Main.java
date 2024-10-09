@@ -15,17 +15,19 @@ public class Main {
         System.out.println("Preço do produto: ");
         double preco = input.nextDouble();
         
-        System.out.println("Tempo de garantia do produto: ");
-        int garantia = input.nextInt();
         
-        Eletronica eletronica = new Eletronica(codigo, preco, nome, garantia);
+        Eletronica eletronica = new Eletronica(codigo, preco, nome);
+        
+        System.out.println("Produto possui garantia? ");
+        String garantia = input.next().toLowerCase();
+        eletronica.verificar_garantia(garantia);
         
         //-------------------------------------------------------------------------------------------------------------------------------------------
         // chamando o metodo verificação de desconto
         
         System.out.println("O produto possui desconto? ");
         String resposta = input.next().toLowerCase();
-        eletronica.verificacao(resposta);
+        eletronica.verificacao_de_desconto(resposta);
         
 
         

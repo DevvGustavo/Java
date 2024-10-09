@@ -49,6 +49,7 @@ public abstract class Produto {
         }
         else if (resposta.equals("não")){
             
+            System.out.println();
             mostrar_dados(); // DEVERIA MOSTRAR os dados sem o desconto, mas ainda não funciona :/
         }
         else{

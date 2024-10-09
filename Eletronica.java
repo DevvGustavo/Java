@@ -16,27 +16,44 @@ public class Eletronica extends Produto {
     }
     
     // irá verificar se a garantia da eletronica é em anos ou em meses
-    public void verificar_garantia() {
+    public void verificar_garantia(String respostaMain) {
 
-        System.out.println("A garantia é em anos ou em mese? ");
-        String resposta = input.next().toLowerCase();
+        if (respostaMain.equals("sim")){
+            
+            System.out.println("A garantia é em anos ou em mese? ");
+            String resposta = input.next().toLowerCase();
 
-        if (resposta.equals("meses")){
+            if (resposta.equals("meses")){
             
             super.mostrar_dados();
             System.out.println("Garantia: " + garantia + " meses");
-        }
-        else if (resposta.equals("anos")) {
+            }
+
+            else if (resposta.equals("anos")) {
 
             System.out.println("O" + getNome() + "possui" + garantia + " anos de garantia");
 
-        }
-        else{
+            }
+
+            else {
 
             System.out.println("Opção Inválida, tente novamente...");
             System.out.println(); //somente para pular linha :)
-            verificar_garantia();
+            verificar_garantia(respostaMain);
+            
+            }
         }
+
+        else if (respostaMain.equals("não")) {
+
+            super.mostrar_dados();
+        }
+
+        else {
+
+            verificar_garantia(respostaMain);
+        }
+        
 
     }
     // se notarem este código a baixo é igual o de cima, mas eu não sei resolver igual a atividade :(
